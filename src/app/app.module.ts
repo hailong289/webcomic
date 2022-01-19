@@ -1,18 +1,20 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { PrimeNGConfig } from 'primeng/api';
+import { ShareModule } from './shared/shared.module';
+import { ComicComponent } from './comic/comic.component';
 
 @NgModule({
 
   declarations: [
-    AppComponent
+    AppComponent,
+    ComicComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ShareModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]
