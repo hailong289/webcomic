@@ -7,5 +7,7 @@ import { Component } from '@angular/core';
 })
 export class HomeComponent {
   title = 'poptruyen';
+
+  release= "test release";
   
 }
