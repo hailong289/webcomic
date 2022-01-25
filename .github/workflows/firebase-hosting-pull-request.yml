@@ -13,5 +13,5 @@ jobs:
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           repoToken: '${{ secrets.GITHUB_TOKEN }}'
-          firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_COMICRELEASE_1ED96 }}'
-          projectId: comicrelease-1ed96
+          firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_COMICAPP_FE631 }}'
+          projectId: comicapp-fe631
