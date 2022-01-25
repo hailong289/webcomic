@@ -4,7 +4,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ShareModule } from './shared/shared.module';
 import { ComicComponent } from './comic/comic.component';
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 @NgModule({
 
   declarations: [
@@ -14,7 +14,8 @@ import { ComicComponent } from './comic/comic.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ShareModule.forRoot()
+    ShareModule.forRoot(),
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
