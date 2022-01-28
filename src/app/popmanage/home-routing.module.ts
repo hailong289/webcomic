@@ -6,7 +6,16 @@ import { LoginComponent } from './login/login.component';
 const routes: Routes = [
     {path:'',redirectTo:'dasboard', pathMatch:'full'},
     {path:'login',component: LoginComponent},
-    {path:'dasboard', component: HomeComponent}
+    {
+      path:'dasboard', 
+      component: HomeComponent, 
+      children: [
+        {
+          path: '',
+          loadChildren: () => import('./dasboard/dasboard.module').then(m => m.DasboardModule)
+        }
+      ]
+    }
 ];
 
 
