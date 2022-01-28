@@ -5,6 +5,7 @@ import { DasboardComponent } from './dasboard.component';
 import {CardModule} from 'primeng/card';
 import {ChartModule} from 'primeng/chart';
 import { TimelineModule } from "primeng/timeline";
+import { TableModule } from 'primeng/table';
 @NgModule({
     declarations: [
         DasboardComponent
@@ -13,7 +14,8 @@ import { TimelineModule } from "primeng/timeline";
         DasboardRoutingModule,
         CardModule,
         ChartModule,
-        TimelineModule
+        TimelineModule,
+        TableModule
     ]
 })
 
