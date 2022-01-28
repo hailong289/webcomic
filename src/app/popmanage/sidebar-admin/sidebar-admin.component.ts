@@ -24,7 +24,7 @@ export class SidebarAdminComponent implements OnInit {
         //     { label: 'Filter', icon: 'pi pi-fw pi-filter', url: 'admin/login' }
         //   ]
         // },
-        { label: 'Open', icon: 'pi pi-fw pi-external-link' },
+        { label: 'Open', icon: 'pi pi-fw pi-external-link', routerLink: '/admin/login' },
         { separator: true },
         { label: 'Quit', icon: 'pi pi-fw pi-times' }
         ]
@@ -73,7 +73,7 @@ export class SidebarAdminComponent implements OnInit {
             label: 'người dùng',
             icon: 'pi pi-user',
             items: [
-              { label: 'Save', icon: 'pi pi-fw pi-save' },
+              { label: 'Save', icon: 'pi pi-fw pi-save'},
               { label: 'Update', icon: 'pi pi-fw pi-save' },
             ]
           },
