@@ -1,7 +1,7 @@
 
 @import "../../app.component.scss";
 .menu-left{
-     width: 260px;
+     width: 280px;
      height: 100vh;
 }
 .relative{
@@ -12,14 +12,82 @@
     height: 100%;
 }
 
-@include max(480){
-    .menu_sub{
-        display: block;
-    }
-}
 .menu_sub{
     display: none;
 }
-.p-panelmenu{
-    width: 100%!important;
+
+::ng-deep .p-panelmenu{
+    width: 100%;
+    margin-bottom: 50px;
+    .p-panelmenu-header.p-highlight > a {
+        background: #37404c;
+        border: none;
+        color: white;
+    }
+    .p-panelmenu-header > a:focus {
+        box-shadow: none;
+     }
+    .p-panelmenu-header.p-highlight:not(.p-disabled) > a:hover {
+        background: #0f8bfd;
+        border: none;
+        color: white;
+    }
+    .p-panelmenu-header:not(.p-highlight):not(.p-disabled) > a:hover {
+        background: #37404c;
+        border: none;
+        color: white;
+    }
+    .p-panelmenu-header > a {
+        // padding: 1.25rem!important;
+        border: none;
+        color: white;
+        background: transparent;
+        font-weight: 700;
+        border-radius: 0;
+        transition: none;
+    }
+    .p-panelmenu-header > a .p-panelmenu-icon {
+        // margin-right: 0.5rem;
+        display: none;
+    }
+    // .p-panelmenu .p-panelmenu-header.p-highlight > a {
+    //     background: #37404c;
+    //     border-color: none;
+    //     color: white;
+    //     border-bottom-right-radius: 0;
+    //     border-bottom-left-radius: 0;
+    // }
+    .p-panelmenu-content {
+        padding: 0.25rem 0;
+        border: none;
+        background: #37404c;
+        color: white;
+        .p-menuitem-link:not(.p-disabled):hover {
+            background: #0f8bfd!important;
+        }
+        .p-menuitem {
+            .p-menuitem-link:not(.p-disabled):hover .p-menuitem-text {
+                color: white;
+            }
+            .p-menuitem-link:not(.p-disabled):hover .p-menuitem-icon {
+                color: white;
+            }
+            .p-menuitem-link {
+                padding: 0.75rem 1.25rem;
+                color: white;
+                .p-menuitem-icon {
+                    color: white;
+                    margin-right: 0.5rem;
+                    margin-left: 20px;
+                }
+                .p-menuitem-text {
+                    color: white;
+                }
+                .p-panelmenu-icon {
+                    // margin-right: 0.5rem;
+                    display: none;
+                }
+            }
+        }
+    }
 }
