@@ -24,7 +24,7 @@ export class SidebarAdminComponent implements OnInit {
         //     { label: 'Filter', icon: 'pi pi-fw pi-filter', url: 'admin/login' }
         //   ]
         // },
-        { label: 'Open', icon: 'pi pi-fw pi-external-link', routerLink: '/admin/login' },
+        { label: 'Open', icon: 'pi pi-fw pi-external-link', routerLink: '/admin/login', routerLinkActiveOptions: { exact: true } },
         { separator: true },
         { label: 'Quit', icon: 'pi pi-fw pi-times' }
         ]

@@ -17,7 +17,6 @@ import { BreadcrumbModule } from 'primeng/breadcrumb';
     SidebarAdminComponent,
     FooterComponent,
     HomeComponent,
-    LoginComponent,
     RegisterComponent,
     BreadcrumbComponent
   ],

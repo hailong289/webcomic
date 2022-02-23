@@ -4,11 +4,11 @@ import { HomeComponent } from './home.component';
 import { LoginComponent } from './login/login.component';
 
 const routes: Routes = [
-    {path:'',redirectTo:'dasboard', pathMatch:'full'},
-    {path:'login',component: LoginComponent},
+    { path:'',redirectTo:'dasboard', pathMatch:'full'},
+    { path:'login', loadChildren: () => import("./login/login.module").then( m => m.LoginModule)},
     {
-      path:'dasboard', 
-      component: HomeComponent, 
+      path:'dasboard',
+      component: HomeComponent,
       children: [
         {
           path: '',
