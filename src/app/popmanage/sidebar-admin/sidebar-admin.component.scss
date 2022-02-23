@@ -26,6 +26,7 @@
     }
     .p-panelmenu-header > a:focus {
         box-shadow: none;
+        background: #0f8bfd;
      }
     .p-panelmenu-header.p-highlight:not(.p-disabled) > a:hover {
         background: #0f8bfd;
@@ -64,6 +65,9 @@
         color: white;
         .p-menuitem-link:not(.p-disabled):hover {
             background: #0f8bfd!important;
+        }
+        .p-menuitem-link:not(.p-disabled):focus {
+            box-shadow: none;
         }
         .p-menuitem {
             .p-menuitem-link:not(.p-disabled):hover .p-menuitem-text {

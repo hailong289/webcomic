@@ -1,1 +1,43 @@
-<p>login works!</p>
+<div class="container">
+  <div class="row">
+    <div class="login-image">
+      <img src="https://www.incimages.com/uploaded_files/image/1920x1080/getty_813319932_383768.jpg" alt="">
+    </div>
+    <div class="login-form">
+      <div class="row-form">
+        <div class="image-log" >
+          <img src="../../../assets/logo.png" alt="">
+        </div>
+        <form action="" [formGroup]="formData" (ngSubmit)="onSubmit()">
+          <h2 class="title">Đăng nhập</h2>
+          <!-- <h4>Đăng nhập</h4> -->
+          <div class="grid p-fluid form-group">
+            <div class="col-12 md:col-12">
+                  <span class="p-input-icon-left">
+                    <i class="pi pi-envelope"></i>
+                    <input id="float-user" type="text" class="border-0 py-3" formControlName="username" pInputText placeholder="Tên đăng nhập">
+                  </span>
+                  <span id="username-help" class="p-error text-lg" *ngIf="formData.controls.username?.errors?.required
+                  && formData.controls.username?.touched">Không để trống tên đăng nhập</span>
+            </div>
+
+            <div class="col-12 md:col-12">
+              <span class="p-input-icon-left">
+                <i class="pi pi-key"></i>
+                <input id="float-pass" type="password" class="border-0 py-3"  formControlName="password" pInputText placeholder="Mật khẩu">
+              </span>
+              <span id="username-help" class="p-error text-lg" *ngIf="formData.controls.password?.errors?.required
+              && formData.controls.password?.touched">Không để trống mật khẩu</span>
+            </div>
+
+            <div class="col-12 md:col-8 mx-auto">
+               <button pButton type="submit" label="Đăng nhập" class="p-button-raised p-button-rounded py-3"></button>
+            </div>
+        </div>
+          <p-toast position="bottom-left"></p-toast>
+        </form>
+      </div>
+
+    </div>
+  </div>
+</div>

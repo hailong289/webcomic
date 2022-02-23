@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-
+import {PrimeIcons} from 'primeng/api';
+import { TestService } from 'src/app/http-service/test.service';
 @Component({
   selector: 'app-dasboard',
   templateUrl: './dasboard.component.html',
@@ -7,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DasboardComponent implements OnInit {
   data: any;
-
+  events: any;
   options: any;
-  constructor() {
+  user: any;
+  cols: any[] = [];
+  first = 1;
+  constructor(private test: TestService) {
     this.data = {
       labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
       datasets: [
@@ -37,6 +41,21 @@ export class DasboardComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.events = [
+        {status: 'Ordered', date: '15/10/2020 10:30', icon: PrimeIcons.SHOPPING_CART, color: '#9C27B0', image: 'game-controller.jpg'},
+        {status: 'Processing', date: '15/10/2020 14:00', icon: PrimeIcons.COG, color: '#673AB7'},
+        {status: 'Shipped', date: '15/10/2020 16:15', icon: PrimeIcons.ENVELOPE, color: '#FF9800'},
+        {status: 'Delivered', date: '16/10/2020 10:00', icon: PrimeIcons.CHECK, color: '#607D8B'}
+    ];
+    this.test.getCarsSmall().subscribe(res => {
+      this.user = res;
+    });
+    this.cols = [
+      { field: 'id', header: 'id' },
+      { field: 'name', header: 'name' },
+      { field: 'avatar', header: 'avatar' }
+    ];
+    
   }
 
 
