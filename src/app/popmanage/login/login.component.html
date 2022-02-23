@@ -6,21 +6,38 @@
     <div class="login-form">
       <div class="row-form">
         <form action="">
-          <h2 class="title">Manage</h2>
-          <h4>Đăng nhập</h4>
-          <div class="form-group">
+          <h2 class="title">Đăng nhập</h2>
+          <!-- <h4>Đăng nhập</h4> -->
+          <div class="grid p-fluid">
+            <div class="col-12 md:col-12">
+                  <span class="p-input-icon-left">
+                    <i class="pi pi-envelope"></i>
+                    <input id="float-user" type="text" pInputText placeholder="Tên đăng nhập">
+                  </span>
+            </div>
+
+            <div class="col-12 md:col-12">
+              <span class="p-input-icon-left">
+                <i class="pi pi-key"></i>
+                <input id="float-pass" type="password" pInputText placeholder="Mật khẩu">
+              </span>
+            </div>
+
+            <div class="col-12 md:col-12">
+               <button pButton type="button" label="Đăng nhập" ></button>
+            </div>
+        </div>
+          <!-- <div class="form-group">
             <span class="p-input-icon-left">
               <i class="pi pi-envelope"></i>
-              <!-- <label for="float-user">Tên đăng nhập</label> -->
               <input id="float-user" type="text" pInputText placeholder="Tên đăng nhập">
             </span>
             <span class="p-input-icon-left">
               <i class="pi pi-key"></i>
-              <!-- <label for="float-pass">Mật khẩu</label> -->
               <input id="float-pass" type="password" pInputText placeholder="Mật khẩu">
             </span>
             <button pButton type="button" label="Đăng nhập" ></button>
-          </div>
+          </div> -->
         </form>
       </div>
 
