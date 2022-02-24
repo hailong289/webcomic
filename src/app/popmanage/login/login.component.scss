@@ -25,7 +25,7 @@
       @include max(480){
         width: 100%;
       }
-      background: #37404C;
+      background-image: linear-gradient(to right, rgb(33, 48, 71), #37404C);
       .row-form{
         width: 50%;
         @include max(480){
@@ -48,6 +48,9 @@
         form{
           .form-group{
             padding: 0px 60px;
+            @include max(480){
+                padding: 0px;
+            }
           }
           .title{
             color: white;

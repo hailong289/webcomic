@@ -33,7 +33,7 @@ export class LoginComponent implements OnInit {
           severity: 'success',
           summary: 'Đăng nhập thành công',
         });
-        localStorage.setItem('token', this.makeid(100));
+        localStorage.setItem('token', this.makeid(1000));
         this.router.navigate(['admin/dashboard']);
       } else {
         this.messageService.add({
