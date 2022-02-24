@@ -1,11 +1,15 @@
 
 @import "../../app.component.scss";
-.menu-left{
-     width: 280px;
-     height: 100vh;
-}
+
 .relative{
     height: 100vh!important;
+}
+.menu-left{
+    width: 280px;
+    height: 100vh;
+    @include max(780){
+        display: none;
+    }
 }
 .menu_content{
     width: 100%;

@@ -1,4 +1,5 @@
-<div class="p-3">
+<div class="content-right">
+<div class="p-3 w-full">
     <div class="grid w-full">
         <div class="col-12 md:col-6 lg:col-3">
             <p-card header="Simple Card" [style]="{'width': '100%', 'margin-bottom': '2em'}">
@@ -36,7 +37,7 @@
                 </p-timeline>
             </p-card>
         </div>
-        <div class="col-12 md:col-8 lg:col-8">  
+        <div class="col-12 md:col-8 lg:col-8">
             <p-table [value]="user" [columns]="cols" [paginator]="true" [rows]="10" [(first)]="first">
                 <ng-template pTemplate="header" let-columns>
                     <tr>
@@ -64,4 +65,5 @@
             </p-card>
         </div>
     </div>
+</div>
 </div>
