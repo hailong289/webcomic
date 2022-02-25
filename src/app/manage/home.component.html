@@ -1,6 +1,13 @@
 <div class="container">
-    <app-sidebar-admin></app-sidebar-admin>
-    <router-outlet></router-outlet>
+    <div class="layout-main">
+        <div class="layout-main_sidebar">
+            <app-sidebar-admin></app-sidebar-admin>
+        </div>
+        <div class="layout-main_content">
+            <app-breadcrumb></app-breadcrumb>
+            <router-outlet></router-outlet>
+        </div>
+    </div>
 </div>
 <!-- <app-footer></app-footer>
 {{ title }} -->

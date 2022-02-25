@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MenuItem } from 'primeng/api';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-sidebar-admin',
@@ -8,85 +9,103 @@ import { MenuItem } from 'primeng/api';
 })
 export class SidebarAdminComponent implements OnInit {
   display: boolean = false;
-  constructor() { }
+  constructor(private route: Router) { }
   items: MenuItem[] = [];
   ngOnInit(): void {
     this.items = [
       {
-        label: 'File',
-        icon: 'pi pi-pw pi-file',
+        label: 'Trang chủ',
+        icon: 'pi pi-home',
+        url: '/admin/dashboard'
+      },
+      {
+        label: 'Quản lý thể loại',
+        icon: 'pi pi-tags',
         items: [
-        // {
-        //   label: 'New',
-        //   icon: 'pi pi-fw pi-plus',
-        //   items: [
-        //     { label: 'User', icon: 'pi pi-fw pi-user-plus' },
-        //     { label: 'Filter', icon: 'pi pi-fw pi-filter', url: 'admin/login' }
-        //   ]
-        // },
-        { label: 'Open', icon: 'pi pi-fw pi-external-link', routerLink: '/admin/login', routerLinkActiveOptions: { exact: true } },
-        { separator: true },
-        { label: 'Quit', icon: 'pi pi-fw pi-times' }
+          { label: 'Danh sách', icon: 'pi pi-fw pi-trash', url: 'admin/category' }
         ]
       },
       {
-        label: 'Edit',
-        icon: 'pi pi-fw pi-pencil',
-        items: [
-          { label: 'Delete', icon: 'pi pi-fw pi-trash' },
-          { label: 'Refresh', icon: 'pi pi-fw pi-refresh' }
-        ]
-      },
-      {
-        label: 'Hỗ trợ',
+        label: 'Quản lý truyện',
         icon: 'pi pi-fw pi-question',
         items: [
           {
-            label: 'Contents',
-            icon: 'pi pi-pi pi-bars'
+            label: 'Danh sách truyện',
+            icon: 'pi pi-list'
           },
-          // {
-          //   label: 'Search',
-          //   icon: 'pi pi-pi pi-search',
-          //   items: [
-          //     {
-          //       label: 'Text',
-          //       items: [
-          //         {
-          //           label: 'Workspace'
-          //         }
-          //       ]
-          //     },
-          //     {
-          //       label: 'User',
-          //       icon: 'pi pi-fw pi-file',
-          //     }
-          //   ]
-          // }
+          {
+            label: 'Chappter',
+            icon: 'pi pi-pi pi-bars'
+          }
         ]
+      },
+      {
+        label: 'Quản lý nhóm',
+        icon: 'pi pi-fw pi-question',
+        items: [
+          {
+            label: 'Danh sách',
+            icon: 'pi pi-list'
+          },
+          {
+            label: 'Vai trò',
+            icon: 'pi pi-pi pi-bars'
+          }
+        ]
+      },
+      {
+        label: 'Quản lý công việc',
+        icon: 'pi pi-calendar-plus',
+        items: [
+          {
+            label: 'Danh sách',
+            icon: 'pi pi-list'
+          }
+        ]
+      },
+      {
+        label: 'Quản lý người dùng',
+        icon: 'pi pi-fw pi-question',
+        items: [
+          {
+            label: 'Danh sách',
+            icon: 'pi pi-list'
+          }
+        ]
+      },
+      {
+        label: 'Quản lý phản hồi',
+        icon: 'pi pi-comments',
+        items: [
+          {
+            label: 'Bình luận',
+            icon: 'pi pi-comment'
+          },
+          {
+            label: 'Báo lỗi',
+            icon: 'pi pi-comment'
+          }
+        ]
+      },
+      {
+        label: 'Quản lý file',
+        icon: 'pi pi-file',
       },
       {
         label: 'Cài đặt',
         icon: 'pi pi-fw pi-cog',
         items: [
           {
-            label: 'người dùng',
+            label: 'Tài khoản',
             icon: 'pi pi-user',
             items: [
-              { label: 'Save', icon: 'pi pi-fw pi-save'},
-              { label: 'Update', icon: 'pi pi-fw pi-save' },
+              { label: 'Thiết lập', icon: 'pi pi-fw pi-save'}
             ]
           },
-          // {
-          //   label: 'Đăng xuất',
-          //   icon: 'pi pi-fw pi-tags',
-          //   items: [
-          //     { label: 'Delete', icon: 'pi pi-fw pi-minus' }
-          //   ]
-          // },
           {
             label: 'Đăng xuất',
-            icon: 'pi pi-sign-out'
+            icon: 'pi pi-sign-out',
+            command: () => this.logout()
           }
         ]
       }
@@ -94,6 +113,10 @@ export class SidebarAdminComponent implements OnInit {
   }
   show() {
     this.display = true;
+  }
+  logout(){
+     localStorage.clear();
+     this.route.navigate(['admin/login']);
   }
 
 }

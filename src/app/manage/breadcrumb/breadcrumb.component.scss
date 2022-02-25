@@ -1,12 +1,12 @@
 .layout-breadcrumb-container{
     display: flex;
     justify-content: space-between;
-    .breadcrumb{
-        width: 50%;
-        overflow: hidden;
-    }
     .nav-bar{
-        width: 50%;
+        display: flex;
+        align-items: center;
+        .profile_setting{
+            margin: 0 20px;
+        }
     }
 }
 

@@ -4,11 +4,11 @@
 <p-button type="text" (click)="show()" icon="pi pi-plus" class="menu_sub"></p-button>
 <div class="card menu-left">
     <div class="card-container yellow-container overflow-hidden">
-        <div class="relative bg-bluegray-800">
+        <div class="relative bg-bluegray-800 overflow-y-scroll">
             <div class="px-4 py-3 w-full font-bold text-white text-5xl text-center">
                 COMICAPP
             </div>
-            <div class="absolute overflow-x-auto surface-overlay mt-2 line-height-3 menu_content bg-bluegray-800">
+            <div class="absolute surface-overlay mt-2 line-height-3 menu_content bg-bluegray-800">
                 <p-panelMenu [model]="items" class="panel-menu"></p-panelMenu>
             </div>
         </div>
