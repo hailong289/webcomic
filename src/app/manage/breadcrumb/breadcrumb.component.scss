@@ -1,0 +1,18 @@
+.layout-breadcrumb-container{
+    display: flex;
+    justify-content: space-between;
+    .breadcrumb{
+        width: 50%;
+        overflow: hidden;
+    }
+    .nav-bar{
+        width: 50%;
+    }
+}
+
+::ng-deep {
+    .p-breadcrumb {
+        background: transparent;
+        border: none;
+    }
+}

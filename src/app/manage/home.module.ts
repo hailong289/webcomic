@@ -6,7 +6,6 @@ import { SidebarModule } from 'primeng/sidebar';
 import { HomeComponent } from './home.component';
 import { ButtonModule } from 'primeng/button';
 import { HomeRoutingModule } from './home-routing.module';
-import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { PanelMenuModule } from 'primeng/panelmenu';
 import { BreadcrumbComponent } from './breadcrumb/breadcrumb.component';

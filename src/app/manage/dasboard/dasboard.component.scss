@@ -1,7 +1,7 @@
 @import "../../app.component.scss";
 .content-right {
     width: calc(100% - 20px);
-    height: 100vh;
+    height: 100%;
     float: right;
     overflow-y: scroll;
     @include max(780) {

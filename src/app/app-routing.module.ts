@@ -10,8 +10,8 @@ const routes: Routes = [
   {
     path: 'admin',
     children: [
-      {path: '', loadChildren: () => import('./popmanage/home.module').then(m => m.HomeModule)},
-      {path: 'dasboard', loadChildren: ()=> import('./popmanage/dasboard/dasboard.module').then(m => m.DasboardModule)}
+      {path: '', loadChildren: () => import('./manage/home.module').then(m => m.HomeModule)},
+      {path: 'dasboard', loadChildren: ()=> import('./manage/dasboard/dasboard.module').then(m => m.DasboardModule)}
     ]
   }
 ];
