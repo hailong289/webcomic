@@ -19,8 +19,9 @@ const routes: Routes = [
     path: 'admin',
     component: HomeComponent,
     canActivate: [AuthGuardService],
+
     children: [
-        { path: 'dashboard', loadChildren: () => import('./manage/dasboard/dasboard.module').then(m => m.DasboardModule) },
+        { path: '', loadChildren: () => import('./manage/dasboard/dasboard.module').then(m => m.DasboardModule) },
         { path: 'category',  loadChildren: () => import('./manage/category/category.module').then(m=> m.CategoryModule) },
 
     ]
