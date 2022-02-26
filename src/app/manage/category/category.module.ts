@@ -4,7 +4,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { CommonModule } from "@angular/common";
 
 const route: Routes = [
-    {path: 'category', component: CategoryComponent}
+    {path: '', component: CategoryComponent}
 ];
 
 @NgModule({
