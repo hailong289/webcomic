@@ -9,12 +9,16 @@ import { PanelMenuModule } from 'primeng/panelmenu';
 import { BreadcrumbComponent } from './breadcrumb/breadcrumb.component';
 import { BreadcrumbModule } from 'primeng/breadcrumb';
 import { InputTextModule } from 'primeng/inputtext';
-@NgModule({
+import { HomeRoutingModule } from './home-routing.module';
+import { LoginModule } from './login/login.module';
+import { HomeComponent } from './home.component';
 
+@NgModule({
   declarations: [
     SidebarAdminComponent,
     FooterComponent,
     RegisterComponent,
+    HomeComponent,
     BreadcrumbComponent
   ],
   imports: [
@@ -23,12 +27,9 @@ import { InputTextModule } from 'primeng/inputtext';
     InputTextModule,
     CommonModule,
     PanelMenuModule,
-    BreadcrumbModule
-  ],
-  exports: [
-      BreadcrumbComponent,
-      SidebarAdminComponent,
-      FooterComponent
+    BreadcrumbModule,
+    HomeRoutingModule,
+    LoginModule
   ]
 })
 export class HomeModule { }
