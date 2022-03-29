@@ -7,17 +7,15 @@ import { ComicComponent } from './comic/comic.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 import { HomeModule } from './manage/home.module';
-
+import { ComicModule } from './comic/comic.module';
 @NgModule({
 
-  declarations: [
-    AppComponent,
-    ComicComponent
-  ],
+  declarations: [AppComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HomeModule,
+    ComicModule,
     ShareModule.forRoot(),
     HttpClientModule,
     BrowserAnimationsModule

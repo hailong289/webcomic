@@ -1,0 +1,36 @@
+.menu-container{
+    width: 80%;
+    margin: 0 auto;
+}
+.menu{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &_context{
+        width: 70%;
+        height: 100%;
+        li{
+            display: inline-block;
+            vertical-align: middle;
+            a{
+                cursor: pointer;
+                text-decoration: none;
+                display: block;
+            }
+        }
+    }
+    .profile_search_filter{
+        width: 30%;
+        height: 100%;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        .search{
+            vertical-align: middle;
+            width: 80%;
+        }
+    }
+}
+
