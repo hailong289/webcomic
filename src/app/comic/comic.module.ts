@@ -17,9 +17,8 @@ import { LayoutModule } from './layout/layout.module';
     imports: [
        CommonModule,
        InputTextModule,
-       LayoutModule,
        ComicRoutingModule
-    ],
+    ]
 })
 
 export class ComicModule { }

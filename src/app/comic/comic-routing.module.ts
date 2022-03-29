@@ -5,13 +5,16 @@ import { NgModule } from '@angular/core';
 
 
 export const routes: Routes = [
-  {
-    path: '',
-    component: ComicComponent,
-    children: [
-        {path: '', loadChildren: () => import('./layout/layout.module').then(m => m.LayoutModule) }
-    ]
-  },
+    {
+        path: '',
+        component: ComicComponent,
+        children: [
+            {
+                path: '',
+                loadChildren: () => import('./layout/layout.module').then(m => m.LayoutModule)
+            }
+        ]
+    },
 
 ];
 
@@ -20,4 +23,4 @@ export const routes: Routes = [
     exports: [RouterModule]
 })
 
-export class ComicRoutingModule {}
+export class ComicRoutingModule { }

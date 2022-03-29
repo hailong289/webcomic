@@ -4,17 +4,15 @@ import { Routes, RouterModule } from '@angular/router';
 import { LayoutComponent } from './layout.component';
 
 
-export const route: Routes = [
+export const routers: Routes = [
     {path: '', component: LayoutComponent},
 ]
 
 @NgModule({
-    declarations: [
-        LayoutComponent
-    ],
+    declarations: [LayoutComponent],
     imports: [
         CommonModule,
-        RouterModule.forChild(route)
+        RouterModule.forChild(routers)
     ],
 })
 
