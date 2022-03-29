@@ -32,8 +32,13 @@
         justify-content: flex-end;
         align-items: center;
         .search{
-            vertical-align: middle;
-            width: 80%;
+            width: 75%;
+        }
+        .profile{
+            width: 20%;
+        }
+        .login{
+            width: 20%;
         }
     }
 }

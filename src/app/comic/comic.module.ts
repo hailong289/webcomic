@@ -6,7 +6,7 @@ import { ComicRoutingModule } from './comic-routing.module';
 import { NavbarComponent } from './navbar/navbar.component';
 import { InputTextModule } from 'primeng/inputtext';
 import { FooterComponent } from './footer/footer.component';
-import { LayoutModule } from './layout/layout.module';
+import { ButtonModule } from 'primeng/button';
 
 @NgModule({
     declarations: [
@@ -17,6 +17,7 @@ import { LayoutModule } from './layout/layout.module';
     imports: [
        CommonModule,
        InputTextModule,
+       ButtonModule,
        ComicRoutingModule
     ]
 })
