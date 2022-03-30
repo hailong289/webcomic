@@ -6,40 +6,54 @@
     width: 80%;
     margin: 0 auto;
 }
-.menu{
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+// .menu{
+//     width: 100%;
+//     display: flex;
+//     justify-content: space-between;
+//     align-items: center;
 
-    &_context{
-        width: 70%;
-        height: 100%;
-        li{
-            display: inline-block;
-            vertical-align: middle;
-            a{
-                cursor: pointer;
-                text-decoration: none;
-                display: block;
-            }
-        }
+//     &_context{
+//         li{
+//             display: inline-block;
+//             vertical-align: middle;
+//             min-width: 20px;
+//             padding: 20px;
+//             a{
+//                 cursor: pointer;
+//                 font-size: 20px;
+//                 font-weight: bold;
+//                 color: white;
+//                 text-decoration: none;
+//                 display: block;
+//             }
+//         }
+//     }
+//     .profile_search_filter{
+//         display: flex;
+//         justify-content: flex-end;
+//         align-items: center;
+//         .search{
+//             width: 65%;
+//         }
+//     }
+// }
+::ng-deep{
+    .p-menubar {
+        padding: 0.5rem;
+        background: none;
+        color: black;
+        font-weight: bold;
+        border: none;
+        border-radius: 6px;
     }
-    .profile_search_filter{
-        width: 30%;
-        height: 100%;
-        display: flex;
-        justify-content: flex-end;
-        align-items: center;
-        .search{
-            width: 75%;
-        }
-        .profile{
-            width: 20%;
-        }
-        .login{
-            width: 20%;
-        }
+    .p-menubar .p-menubar-root-list > .p-menuitem.p-menuitem-active > .p-menuitem-link, 
+    .p-menubar .p-menubar-root-list > .p-menuitem.p-menuitem-active > .p-menuitem-link:not(.p-disabled):hover{
+        background: white;
+       
+    }
+    .p-menubar .p-menuitem-link{
+        box-shadow: unset;
+        border: none;
     }
 }
 

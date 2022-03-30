@@ -7,7 +7,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { InputTextModule } from 'primeng/inputtext';
 import { FooterComponent } from './footer/footer.component';
 import { ButtonModule } from 'primeng/button';
-
+import {MenubarModule} from 'primeng/menubar';
 @NgModule({
     declarations: [
         ComicComponent,
@@ -18,6 +18,7 @@ import { ButtonModule } from 'primeng/button';
        CommonModule,
        InputTextModule,
        ButtonModule,
+       MenubarModule,
        ComicRoutingModule
     ]
 })
