@@ -1,0 +1,27 @@
+<nav class="w-full bg-yellow-500 h-5rem my_menu">
+    <div class="menu-container">
+        <!-- <div class="menu"> -->
+            <!-- <ul class="menu_context">
+                <li><a href="">Trang chủ</a></li>
+                <li><a href="">Thể loại</a></li>
+                <li><a href="">Hot</a></li>
+                <li><a href="">Xem nhiều</a></li>
+                <li><a href="">Lịch sử</a></li>
+            </ul>
+            <div class="profile_search_filter">
+                <span class="p-input-icon-right w-auto">
+                    <i class="pi pi-search"></i>
+                    <input type="text" pInputText placeholder="Search">
+                </span>
+                <button pButton pRipple type="button" label="Đăng nhập" class="p-button-raised p-button-success text-base w-auto ml-3"></button>
+            </div> -->
+            <p-menubar [model]="items" class="bg-yellow-500">
+                <span class="p-input-icon-right w-auto hidden md:inline-flex">
+                    <i class="pi pi-search"></i>
+                    <input type="text" pInputText placeholder="TÌm kiếm">
+                </span>
+                <button pButton pRipple type="button" label="Đăng nhập" class="hidden md:inline-flex p-button-raised p-button-success text-base w-auto ml-3"></button>
+            </p-menubar>
+        <!-- </div> -->
+    </div>
+</nav>
