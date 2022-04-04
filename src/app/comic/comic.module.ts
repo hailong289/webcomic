@@ -8,11 +8,13 @@ import { InputTextModule } from 'primeng/inputtext';
 import { FooterComponent } from './footer/footer.component';
 import { ButtonModule } from 'primeng/button';
 import {MenubarModule} from 'primeng/menubar';
+import { ComicDetailComponent } from './comic-detail/comic-detail.component';
 @NgModule({
     declarations: [
         ComicComponent,
         NavbarComponent,
-        FooterComponent
+        FooterComponent,
+        ComicDetailComponent
     ],
     imports: [
        CommonModule,
