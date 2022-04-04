@@ -1,0 +1,21 @@
+.background_image{
+    width: 100%;
+    height: 250px;
+}
+
+.content{
+    height: 250px;
+}
+.list_content{
+    height: 32px;
+}
+::ng-deep{
+    .p-rating {
+        // text-align: center;
+        margin-top: 15px;
+    }
+    .p-rating .p-rating-icon.pi-star-fill {
+        color: orange;
+        font-size: 30px;
+    }
+}

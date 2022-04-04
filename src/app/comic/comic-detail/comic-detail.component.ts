@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./comic-detail.component.scss']
 })
 export class ComicDetailComponent implements OnInit {
-
+  val1: number = 5;
   constructor() { }
 
   ngOnInit(): void {
