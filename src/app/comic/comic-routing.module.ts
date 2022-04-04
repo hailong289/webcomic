@@ -12,6 +12,10 @@ export const routes: Routes = [
             {
                 path: '',
                 loadChildren: () => import('./layout/layout.module').then(m => m.LayoutModule)
+            },
+            {
+                path: ':name',
+                loadChildren: () => import('./comic-detail/comic-detail.module').then( m => m.ComicDetailModule)
             }
         ]
     },
