@@ -14,8 +14,12 @@ export const routes: Routes = [
                 loadChildren: () => import('./layout/layout.module').then(m => m.LayoutModule)
             },
             {
-                path: ':name',
+                path: 'truyen/:name',
                 loadChildren: () => import('./comic-detail/comic-detail.module').then( m => m.ComicDetailModule)
+            },
+            {
+                path: 'danh-sach',
+                loadChildren: () => import('./list-comic/list-comic.module').then( m => m.ListModule)
             }
         ]
     },

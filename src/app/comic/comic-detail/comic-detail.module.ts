@@ -9,6 +9,7 @@ import {ButtonModule} from 'primeng/button';
 import { DividerModule} from 'primeng/divider';
 import {TableModule} from 'primeng/table'
 import {InputTextareaModule} from 'primeng/inputtextarea';
+import { TabViewModule } from "primeng/tabview";
 
 export const routers: Routes = [
     {path: '', component: ComicDetailComponent},
@@ -24,6 +25,7 @@ export const routers: Routes = [
         DividerModule,
         TableModule,
         InputTextareaModule,
+        TabViewModule,
         RouterModule.forChild(routers)
     ],
 })
