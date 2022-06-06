@@ -13,6 +13,14 @@ const routes: Routes = [
         {
           path: '',
           loadChildren: () => import('./dasboard/dasboard.module').then(m => m.DasboardModule)
+        },
+        {
+          path: 'category',
+          loadChildren: () => import('./category/category.module').then(m => m.CategoryModule)
+        },
+        {
+          path: 'chapters',
+          loadChildren: () => import('./chapter/chapter.module').then(m => m.ChapterModule)
         }
       ]
     }

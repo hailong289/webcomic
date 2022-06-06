@@ -9,12 +9,14 @@ import { FooterComponent } from './footer/footer.component';
 import { ButtonModule } from 'primeng/button';
 import { MenubarModule } from 'primeng/menubar';
 import { HttpClientModule } from '@angular/common/http';
+import { NotFoundComponent } from './error/not-found/not-found.component';
 
 @NgModule({
     declarations: [
         ComicComponent,
         NavbarComponent,
-        FooterComponent
+        FooterComponent,
+        NotFoundComponent
     ],
     imports: [
        CommonModule,

@@ -10,28 +10,36 @@ import { Router } from '@angular/router';
 export class SidebarAdminComponent implements OnInit {
   display: boolean = false;
   constructor(private route: Router) { }
-  items: MenuItem[] = [];
+  items: any[] = [];
+  showP: boolean = false;
+  activeState: any = [true];
   ngOnInit(): void {
     this.items = [
       {
         label: 'Trang chủ',
         icon: 'pi pi-home',
-        url: '/admin/dashboard'
+        routerLink: 'dashboard',
+        routerLinkActiveOptions: {exact:true},
+        key: 'dashboad'
       },
       {
         label: 'Quản lý thể loại',
         icon: 'pi pi-tags',
-        items: [
-          { label: 'Danh sách', icon: 'pi pi-fw pi-trash', url: 'admin/category' }
+        key: 'category',
+        children: [
+          { label: 'Danh sách', icon: 'pi pi-fw pi-trash', routerLink: 'category', routerLinkActiveOptions: {exact:true} }
         ]
       },
       {
         label: 'Quản lý truyện',
         icon: 'pi pi-fw pi-question',
-        items: [
+        key: 'comic',
+        children: [
           {
             label: 'Danh sách truyện',
-            icon: 'pi pi-list'
+            icon: 'pi pi-list',
+            routerLink: 'chapters',
+            routerLinkActiveOptions: {exact:true}
           },
           {
             label: 'Chappter',
@@ -42,7 +50,8 @@ export class SidebarAdminComponent implements OnInit {
       {
         label: 'Quản lý nhóm',
         icon: 'pi pi-fw pi-question',
-        items: [
+        key: 'group',
+        children: [
           {
             label: 'Danh sách',
             icon: 'pi pi-list'
@@ -56,7 +65,8 @@ export class SidebarAdminComponent implements OnInit {
       {
         label: 'Quản lý công việc',
         icon: 'pi pi-calendar-plus',
-        items: [
+        key: 'job',
+        children: [
           {
             label: 'Danh sách',
             icon: 'pi pi-list'
@@ -66,7 +76,8 @@ export class SidebarAdminComponent implements OnInit {
       {
         label: 'Quản lý người dùng',
         icon: 'pi pi-fw pi-question',
-        items: [
+        key: 'user',
+        children: [
           {
             label: 'Danh sách',
             icon: 'pi pi-list'
@@ -76,7 +87,8 @@ export class SidebarAdminComponent implements OnInit {
       {
         label: 'Quản lý phản hồi',
         icon: 'pi pi-comments',
-        items: [
+        key: 'rate',
+        children: [
           {
             label: 'Bình luận',
             icon: 'pi pi-comment'
@@ -90,11 +102,14 @@ export class SidebarAdminComponent implements OnInit {
       {
         label: 'Quản lý file',
         icon: 'pi pi-file',
+        key: 'file',
+        routerLink: 'file',
       },
       {
         label: 'Cài đặt',
         icon: 'pi pi-fw pi-cog',
-        items: [
+        key: 'setting',
+        children: [
           {
             label: 'Tài khoản',
             icon: 'pi pi-user',
@@ -117,6 +132,19 @@ export class SidebarAdminComponent implements OnInit {
   logout(){
      localStorage.clear();
      this.route.navigate(['admin/login']);
+  }
+  activeMenu(event: any){
+    let node;
+    if (event.target.tagName === "A") {
+      node = event.target;
+    } else {
+      node = event.target.parentNode;
+    }
+    let menuitem = document.getElementsByClassName("ui-menuitem-link");
+    for (let i = 0; i < menuitem.length; i++) {
+      menuitem[i].classList.remove("active");
+    }
+    node.classList.add("active")
   }
 
 }
