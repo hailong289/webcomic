@@ -1,0 +1,18 @@
+.layout-breadcrumb-container{
+    display: flex;
+    justify-content: space-between;
+    .nav-bar{
+        display: flex;
+        align-items: center;
+        .profile_setting{
+            margin: 0 20px;
+        }
+    }
+}
+
+::ng-deep {
+    .p-breadcrumb {
+        background: transparent;
+        border: none;
+    }
+}

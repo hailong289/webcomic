@@ -1,0 +1,26 @@
+<div class="grid p-fluid">
+    <form class="field col-12 md:col-6 m-auto" [formGroup]="form" (ngSubmit)="onSubmit()">
+        <div class="field">
+            <label for="category_name" class="block">Tên danh mục</label>
+            <input id="category_name" type="category_name" formControlName="category_name" placeholder="nhập tên danh mục" pInputText />
+            <ng-container *ngIf="form.controls['category_name'].invalid && (form.controls['category_name'].dirty || form.controls['category_name'].touched)">
+                <small *ngIf="form.controls['category_name']?.errors?.required" id="username2-help" class="p-error block">Tên danh mục không để trống</small>
+            </ng-container>
+            
+           
+        </div>
+        <div class="field-radiobutton">
+            <div class="field-radiobutton mr-2">
+                <p-radioButton name="invalid" value="0" formControlName="invalid" inputId="invalid1"></p-radioButton>
+                <label for="invalid1" class="mb-0">Ẩn</label>
+            </div>
+            <div class="field-radiobutton">
+                <p-radioButton name="invalid" value="1" formControlName="invalid" inputId="invalid2"></p-radioButton>
+                <label for="invalid2" class="mb-0">Hiện</label>
+            </div>
+        </div>
+        <div class="field col-12 md:col-8 m-auto">
+            <button pButton pRipple type="submit" label="Thêm mới" class="p-button-raised"></button>
+        </div>
+    </form>
+</div>
