@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { response } from './../model/response';
 import { environment } from './../../environments/environment';
-import { APIADMIN } from './config';
+import { APIADMIN } from './config.service';
 
 @Injectable({
   providedIn: 'root'
