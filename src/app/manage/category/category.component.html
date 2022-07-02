@@ -7,39 +7,42 @@
                     <p>{{ title_list }}</p>
                 </div>
                 <div class="col text-right">
-                    <button (click)="confirm()" pButton icon="pi pi-check" label="Confirm"></button>
+                    <button (click)="showForm()" pButton label="Thêm"></button>
                 </div>
             </div>
-            <p-table styleClass="p-datatable-gridlines" [value]="customers" [lazy]="true"
-                (onLazyLoad)="loadCustomers($event)" [paginator]="true" [rows]="10" [totalRecords]="totalRecords"
+            <p-table styleClass="p-datatable-gridlines" [rowHover]="true" [value]="category" [lazy]="true"
+                [paginator]="true" [rows]="10" [totalRecords]="category.length"
                 [loading]="loading">
                 <ng-template pTemplate="caption">
                     <div class="flex">
-                        <button pButton label="Xóa bộ lọc" class="p-button-outlined" icon="pi pi-filter-slash"></button>
-                        <span class="p-input-icon-left ml-auto">
+                        <!-- <button pButton label="Xóa bộ lọc" class="p-button-outlined" icon="pi pi-filter-slash"></button> -->
+                        <span class="p-input-icon-left">
                             <i class="pi pi-search"></i>
-                            <input pInputText type="text" placeholder="Tìm kiếm tên" />
+                            <input pInputText type="text" placeholder="Tìm kiếm tên" [(ngModel)]="name" (change)="search()" />
                         </span>
                     </div>
                 </ng-template>
                 <ng-template pTemplate="header">
-                    <tr>
-                        <th>Name</th>
-                        <th>Country</th>
-                        <th>Company</th>
-                        <th>Representative</th>
+                    <tr class="text-center">
+                        <th>STT</th>
+                        <th>Tên danh mục</th>
+                        <th>Trạng thái</th>
+                        <th>Thao tác</th>
                     </tr>
                 </ng-template>
-                <ng-template pTemplate="body" let-customer>
-                    <tr>
-                        <td>{{customer.name}}</td>
-                        <td>{{customer.country.name}}</td>
-                        <td>{{customer.company}}</td>
-                        <td>{{customer.representative.name}}</td>
+                <ng-template pTemplate="body" let-category let-rowIndex="rowIndex">
+                    <tr class="text-center">
+                        <td>{{rowIndex + 1}}</td>
+                        <td>{{category.category_name}}</td>
+                        <td>{{category.invalid == 1 ?'Hiện':'Ẩn'}}</td>
+                        <td>
+                            <button pButton pRipple icon="pi pi-pencil" class="p-button-rounded p-button-success mr-2" (click)="showForm(category)"></button>
+                            <button pButton pRipple icon="pi pi-trash" class="p-button-rounded p-button-warning" (click)="confirm($event, category.id)"></button>
+                        </td>
                     </tr>
                 </ng-template>
             </p-table>
         </div>
     </div>
 </div>
-<app-form-create-edit-category></app-form-create-edit-category>
+<p-confirmPopup></p-confirmPopup>
