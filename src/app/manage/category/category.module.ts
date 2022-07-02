@@ -7,7 +7,10 @@ import {MultiSelectModule} from 'primeng/multiselect';
 import { SharedModuleV2 } from './../../shared/sharedV2.module';
 import { ConfirmDialogModule } from 'primeng/confirmdialog';
 import { ConfirmationService } from 'primeng/api';
+import { DynamicDialogModule } from 'primeng/dynamicdialog';
 import { FormCreateEditCategoryComponent } from './form-create-edit-category/form-create-edit-category.component';
+import { RadioButtonModule } from 'primeng/radiobutton';
+import {ConfirmPopupModule} from 'primeng/confirmpopup';
 const route: Routes = [
     {path: '', component: CategoryComponent}
 ];
@@ -24,7 +27,10 @@ const route: Routes = [
         TableModule,
         MultiSelectModule,
         SharedModuleV2,
-        ConfirmDialogModule
+        ConfirmDialogModule,
+        DynamicDialogModule,
+        RadioButtonModule,
+        ConfirmPopupModule
     ],
     providers: [ConfirmationService]
 })

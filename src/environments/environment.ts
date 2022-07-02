@@ -3,9 +3,34 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  bashUrl: 'http://localhost:4200',
-  production: false
+  bashUrl: 'http://localhost:8888',
+  production: false,
+
+
+  get domainUrl() {
+      return this.bashUrl
+  },
+
+  get apiAdminURL() {
+      return this.domainUrl + '/api/admin'
+  },
+
+  get axiosConfig() {
+      return {
+          headers: { 'Content-Type': 'multipart/form-data' },
+          baseURL: this.apiAdminURL,
+      }
+  },
+
+  get headersJson() {
+      return {
+          headers: { 'Content-Type': 'application/json' },
+          baseURL: this.apiAdminURL,
+      }
+  },
 };
+
+
 
 /*
  * For easier debugging in development mode, you can import the following file
