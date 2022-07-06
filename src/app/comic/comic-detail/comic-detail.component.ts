@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { TestService } from 'src/app/http-service/test.service';
 
 @Component({
   selector: 'app-comic-detail',
@@ -8,13 +7,9 @@ import { TestService } from 'src/app/http-service/test.service';
 })
 export class ComicDetailComponent implements OnInit {
   val1: number = 5;
-  constructor(private test: TestService) { }
-  products: any;
+  constructor() { }
+
   ngOnInit(): void {
-    this.test.getDumpapi().subscribe(res=>{
-      this.products = res;
-      console.log(this.products);
-    })
   }
 
 }

@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
@@ -7,12 +7,8 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 export class TestService {
 
   constructor(private http: HttpClient) { }
-  
+
   getCarsSmall() {
     return this.http.get('https://61b077953c954f001722a3d9.mockapi.io/api/v1/user');
-  }
-
-  getDumpapi(){
-    return this.http.get('https://fakestoreapi.com/products');
   }
 }

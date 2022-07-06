@@ -7,8 +7,6 @@ import { CarouselModule } from 'primeng/carousel';
 import { VirtualScrollerModule} from 'primeng/virtualscroller';
 import { DividerModule} from 'primeng/divider';
 import { BadgeModule } from 'primeng/badge';
-import { TableModule } from "primeng/table";
-import { TabViewModule } from "primeng/tabview";
 
 export const routers: Routes = [
     {path: '', component: LayoutComponent},
@@ -23,8 +21,6 @@ export const routers: Routes = [
         VirtualScrollerModule,
         DividerModule,
         BadgeModule,
-        TableModule,
-        TabViewModule,
         RouterModule.forChild(routers)
     ],
 })

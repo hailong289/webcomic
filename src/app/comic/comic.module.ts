@@ -1,5 +1,5 @@
 
-import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { ComicComponent } from './comic.component';
 import { CommonModule } from '@angular/common';
 import { ComicRoutingModule } from './comic-routing.module';
@@ -22,11 +22,9 @@ import { NotFoundComponent } from './error/not-found/not-found.component';
        CommonModule,
        InputTextModule,
        ButtonModule,
-       HttpClientModule,
        MenubarModule,
        ComicRoutingModule
-    ],
-    exports: [ComicComponent]
+    ]
 })
 
 export class ComicModule { }
