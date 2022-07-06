@@ -1,6 +1,6 @@
 export const environment = {
   production: true,
-  bashUrl: 'http://comicany.herokuapp.com',
+  bashUrl: 'https://comicany.herokuapp.com',
 
 
   get domainUrl() {
