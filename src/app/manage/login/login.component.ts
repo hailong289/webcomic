@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { MessageService } from 'primeng/api';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { NgxSpinnerService } from "ngx-spinner";
+// import { NgxSpinnerService } from "ngx-spinner";
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -15,7 +15,7 @@ export class LoginComponent implements OnInit {
     private messageService: MessageService,
     private login: FormBuilder,
     public router: Router,
-    private load: NgxSpinnerService
+    // private load: NgxSpinnerService
   ) {
     this.formData = this.login.group({
       username: ['', Validators.required],
@@ -24,10 +24,10 @@ export class LoginComponent implements OnInit {
   }
 
   ngOnInit(): void {
-       this.load.show();
-       setTimeout(() => {
-          this.load.hide();
-       }, 3000);
+    //    this.load.show();
+    //    setTimeout(() => {
+    //       this.load.hide();
+    //    }, 3000);
   }
   addSingle() {}
   onSubmit() {

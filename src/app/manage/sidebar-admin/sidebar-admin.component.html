@@ -10,18 +10,18 @@
                     COMICAPP
                 </div>
                 <div class="absolute surface-overlay mt-2 line-height-3 menu_content bg-bluegray-800">
-                   
+
                     <nav class="menu">
                         <ul class="parent_menu">
                             <ng-container *ngFor="let menu of items;let i = index">
                                 <ng-container *ngIf="!menu.children">
-                                    <li routerLink="{{ menu.routerLink }}" routerLinkActive="is-active" class="cursor-pointer"><span class="{{ menu.icon }}"></span>{{ menu.label }}</li>
-                                </ng-container>  
+                                    <li [routerLink]="['{{ menu.routerLink }}']" routerLinkActive="is-active" class="cursor-pointer"><span class="{{ menu.icon }}"></span>{{ menu.label }}</li>
+                                </ng-container>
                                 <ng-container *ngIf="menu.children" >
                                     <p-accordion expandIcon="{{ menu.icon }}" [(selected)]="activeState[i]">
                                         <p-accordionTab header="{{ menu.label }}">
                                             <div class="sub_menu" *ngFor="let submenu of menu.children">
-                                                <li class="nav_link cursor-pointer" routerLink="{{ submenu.routerLink }}" routerLinkActive="is-active"><span class="{{ menu.icon }}"></span>{{ submenu.label }}</li>
+                                                <li class="nav_link cursor-pointer" [routerLink]="['{{ submenu.routerLink }}']" routerLinkActive="is-active"><span class="{{ menu.icon }}"></span>{{ submenu.label }}</li>
                                             </div>
                                         </p-accordionTab>
                                     </p-accordion>
@@ -30,7 +30,7 @@
                         </ul>
                     </nav>
                 </div>
-                
+
             </div>
         </perfect-scrollbar>
     </div>

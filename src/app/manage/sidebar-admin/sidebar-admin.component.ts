@@ -41,10 +41,10 @@ export class SidebarAdminComponent implements OnInit {
             routerLink: 'chapters',
             routerLinkActiveOptions: {exact:true}
           },
-          {
-            label: 'Chappter',
-            icon: 'pi pi-pi pi-bars'
-          }
+        //   {
+        //     label: 'Chappter',
+        //     icon: 'pi pi-pi pi-bars'
+        //   }
         ]
       },
       {
@@ -54,11 +54,15 @@ export class SidebarAdminComponent implements OnInit {
         children: [
           {
             label: 'Danh sách',
-            icon: 'pi pi-list'
+            icon: 'pi pi-list',
+            routerLink: 'list-group',
+            routerLinkActiveOptions: {exact:true}
           },
           {
             label: 'Vai trò',
-            icon: 'pi pi-pi pi-bars'
+            icon: 'pi pi-pi pi-bars',
+            routerLink: 'role',
+            routerLinkActiveOptions: {exact:true}
           }
         ]
       },
@@ -132,19 +136,6 @@ export class SidebarAdminComponent implements OnInit {
   logout(){
      localStorage.clear();
      this.route.navigate(['admin/login']);
-  }
-  activeMenu(event: any){
-    let node;
-    if (event.target.tagName === "A") {
-      node = event.target;
-    } else {
-      node = event.target.parentNode;
-    }
-    let menuitem = document.getElementsByClassName("ui-menuitem-link");
-    for (let i = 0; i < menuitem.length; i++) {
-      menuitem[i].classList.remove("active");
-    }
-    node.classList.add("active")
   }
 
 }
