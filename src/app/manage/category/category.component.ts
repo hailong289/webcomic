@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { LazyLoadEvent, PrimeNGConfig } from 'primeng/api';
 import { CustomerService } from 'src/app/http-service/customer.service';
 import { ConfirmationService } from 'primeng/api';
@@ -14,6 +14,7 @@ import { response } from './../../model/response';
   providers: [DialogService]
 })
 export class CategoryComponent implements OnInit {
+
 
   datasource: any[] = [];
 
@@ -32,7 +33,7 @@ export class CategoryComponent implements OnInit {
   name = '';
 
   constructor(
-      private customerService: CustomerService, 
+      private customerService: CustomerService,
       private primengConfig: PrimeNGConfig,
       private confirmationService: ConfirmationService,
       public dialogService: DialogService,
@@ -47,11 +48,15 @@ export class CategoryComponent implements OnInit {
       this.loading = true;
       this.categoryService.getListCategory({category_name: name}).subscribe((res: any)=>{
           if(res){
-              this.category = res.data.list_items;
-              this.loading = false;
+            this.loading = false;
+            // this.category = res.data.list_items;
+            // console.log(res);
+            this.category = res;
+            this.totalRecords = res.length;
           }
       })
   }
+
   showForm(data = null) {
         const ref = this.dialogService.open(FormCreateEditCategoryComponent, {
             header: 'Thêm danh mục',
@@ -73,9 +78,6 @@ export class CategoryComponent implements OnInit {
             this.categoryService.delete(id).subscribe(res => {
                  res && this.getListCateory();
             });
-        },
-        reject: () => {
-            //reject action
         }
     });
   }

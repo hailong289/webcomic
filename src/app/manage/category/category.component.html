@@ -10,18 +10,8 @@
                     <button (click)="showForm()" pButton label="Thêm"></button>
                 </div>
             </div>
-            <p-table styleClass="p-datatable-gridlines" [rowHover]="true" [value]="category" [lazy]="true"
-                [paginator]="true" [rows]="10" [totalRecords]="category.length"
-                [loading]="loading">
-                <ng-template pTemplate="caption">
-                    <div class="flex">
-                        <!-- <button pButton label="Xóa bộ lọc" class="p-button-outlined" icon="pi pi-filter-slash"></button> -->
-                        <span class="p-input-icon-left">
-                            <i class="pi pi-search"></i>
-                            <input pInputText type="text" placeholder="Tìm kiếm tên" [(ngModel)]="name" (change)="search()" />
-                        </span>
-                    </div>
-                </ng-template>
+            <p-table [value]="category" [paginator]="true" [totalRecords]="totalRecords" [rows]="10"
+                [showCurrentPageReport]="true" styleClass="p-datatable-gridlines" [rowsPerPageOptions]="[10,25,50]">
                 <ng-template pTemplate="header">
                     <tr class="text-center">
                         <th>STT</th>
@@ -36,8 +26,10 @@
                         <td>{{category.category_name}}</td>
                         <td>{{category.invalid == 1 ?'Hiện':'Ẩn'}}</td>
                         <td>
-                            <button pButton pRipple icon="pi pi-pencil" class="p-button-rounded p-button-success mr-2" (click)="showForm(category)"></button>
-                            <button pButton pRipple icon="pi pi-trash" class="p-button-rounded p-button-warning" (click)="confirm($event, category.id)"></button>
+                            <button pButton pRipple icon="pi pi-pencil" class="p-button-rounded p-button-success mr-2"
+                                (click)="showForm(category)"></button>
+                            <button pButton pRipple icon="pi pi-trash" class="p-button-rounded p-button-warning"
+                                (click)="confirm($event, category.id)"></button>
                         </td>
                     </tr>
                 </ng-template>
