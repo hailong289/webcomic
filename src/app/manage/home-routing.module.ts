@@ -8,7 +8,7 @@ const routes: Routes = [
     {
       path:'',
       component: HomeComponent,
-      canActivate: [AuthGuardService], 
+      canActivate: [AuthGuardService],
       children: [
         {
           path: '',
@@ -21,6 +21,10 @@ const routes: Routes = [
         {
           path: 'chapters',
           loadChildren: () => import('./chapter/chapter.module').then(m => m.ChapterModule)
+        },
+        {
+            path: 'chat',
+            loadChildren: () => import('./chat/chat.module').then(m => m.ChatModule)
         }
       ]
     }
