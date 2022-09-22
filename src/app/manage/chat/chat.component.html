@@ -1,49 +1,84 @@
-<div class="w-100 p-3">
-    <div class="col-12">
-        <p-card header="Simple Card" [style]="{'width': '100%', 'margin-bottom': '2em'}">
+<div class="w-100 p-md-3">
+    <div class="col-12 p-0">
+        <div class="col-4 hidden md:block">
+            <p-virtualScroller [value]="sourceChats" scrollHeight="450px" [itemSize]="100" [lazy]="true" >
+                <ng-template pTemplate="header">
+                    List of Products
+                </ng-template>
+                <ng-template let-chat pTemplate="item">
+                    <div class="product-item">
+                        <div class="image-container">
+                            <img src="{{chat.image}}" [alt]="chat.name" class="product-image" />
+                        </div>
+                        <div class="product-list-detail">
+                            <h5 class="mb-2">{{chat.name}}</h5>
+                            <!-- <i class="pi pi-tag product-category-icon"></i> -->
+                            <span class="product-category">{{chat.content}}</span>
+                        </div>
+                        <!-- <div class="product-list-action">
+                            <h6 class="mb-2">${{product.price}}</h6>
+                            <span [class]="'product-badge status-' + product.inventoryStatus.toLowerCase()">{{product.inventoryStatus}}</span>
+                        </div> -->
+                    </div>
+                </ng-template>
+                <ng-template let-chat pTemplate="loadingItem">
+                    <div class="product-item loading-item">
+                        <div class="image-container"></div>
+                        <div class="product-list-detail">
+                            <h5 class="mb-2"></h5>
+                            <i class="product-category-icon"></i>
+                            <span class="product-category"></span>
+                        </div>
+                        <!-- <div class="product-list-action">
+                            <h6 class="mb-2"></h6>
+                            <span class="product-badge"></span>
+                        </div> -->
+                    </div>
+                </ng-template>
+            </p-virtualScroller>
+        </div>
+        <p-card [style]="{'width': '100%', 'height': '100vh'}">
             <ng-template pTemplate="header">
-                <img alt="Card" src="assets/showcase/images/usercard.png">
+                chat
             </ng-template>
-            <div class="center grid">
-                <div class="col-4">
-                    <p-virtualScroller [value]="sourceChats" scrollHeight="450px" [itemSize]="100" [lazy]="true" >
-                        <ng-template pTemplate="header">
-                            List of Products
-                        </ng-template>
-                        <ng-template let-chat pTemplate="item">
-                            <div class="product-item">
-                                <div class="image-container">
-                                    <img src="{{chat.image}}" [alt]="chat.name" class="product-image" />
+            <ng-template pTemplate="content">
+                    <div class="col-12 col-md-8" style="height: 100vh">
+                        <div class="content">
+                            <div class="list">
+                                <div class="list-item">
+                                    <div class="left">
+                                        <img src="https://thuthuatnhanh.com/wp-content/uploads/2022/03/Hinh-avatar-Tiktok-chu-meo-beo-de-thuong.jpg" class="thumb_avatar"  />
+                                        <div class="message">
+                                            <span class="text">Hello</span>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class="product-list-detail">
-                                    <h5 class="mb-2">{{chat.name}}</h5>
-                                    <!-- <i class="pi pi-tag product-category-icon"></i> -->
-                                    <span class="product-category">{{chat.content}}</span>
-                                </div>
-                                <!-- <div class="product-list-action">
-                                    <h6 class="mb-2">${{product.price}}</h6>
-                                    <span [class]="'product-badge status-' + product.inventoryStatus.toLowerCase()">{{product.inventoryStatus}}</span>
-                                </div> -->
+                                <div class="list-item"><div class="right">
+                                    <img src="https://thuthuatnhanh.com/wp-content/uploads/2022/03/Hinh-avatar-Tiktok-chu-meo-beo-de-thuong.jpg" class="thumb_avatar"  />
+                                    <div class="message">
+                                        <span class="text">Hello</span>
+                                    </div>
+                                </div></div>
+                                <div class="list-item"><div class="left">
+                                    <img src="https://thuthuatnhanh.com/wp-content/uploads/2022/03/Hinh-avatar-Tiktok-chu-meo-beo-de-thuong.jpg" class="thumb_avatar"  />
+                                    <div class="message">
+                                        <span class="text">Hello</span>
+                                    </div>
+                                </div></div>
+                                <div class="list-item"><div class="right">
+                                    <img src="https://thuthuatnhanh.com/wp-content/uploads/2022/03/Hinh-avatar-Tiktok-chu-meo-beo-de-thuong.jpg" class="thumb_avatar"  />
+                                    <div class="message">
+                                        <span class="text">Hello</span>
+                                    </div>
+                                </div></div>
                             </div>
-                        </ng-template>
-                        <ng-template let-chat pTemplate="loadingItem">
-                            <div class="product-item loading-item">
-                                <div class="image-container"></div>
-                                <div class="product-list-detail">
-                                    <h5 class="mb-2"></h5>
-                                    <i class="product-category-icon"></i>
-                                    <span class="product-category"></span>
-                                </div>
-                                <!-- <div class="product-list-action">
-                                    <h6 class="mb-2"></h6>
-                                    <span class="product-badge"></span>
-                                </div> -->
-                            </div>
-                        </ng-template>
-                    </p-virtualScroller>
-                </div>
-                <div class="col-8">1</div>
-            </div>
+                        </div>
+                        <div class="footer">
+                            <textarea class="control-message" name="message" pInputTextarea placeholder="Nhập tin nhắn" ></textarea>
+                            <button pButton class="sendMessage">Gửi</button>
+                        </div>
+                    </div>
+            </ng-template>
         </p-card>
     </div>
 </div>
