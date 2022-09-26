@@ -10,7 +10,9 @@ export class ChatComponent implements OnInit {
     sourceChats = [];
 
     constructor(private chatService: ChatService){}
-    ngOnInit(): void {}
+    ngOnInit(): void {
+        this.getListChat();
+    }
 
 
     getListChat(){

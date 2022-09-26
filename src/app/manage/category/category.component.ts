@@ -70,7 +70,8 @@ export class CategoryComponent implements OnInit {
         });
   }
   confirm(event: Event, id: number) {
-    this.confirmationService.confirm({
+      // @ts-ignore
+      this.confirmationService.confirm({
         target: event.target ?? undefined,
         message: 'Bạn có chắc chắn xóa mục này?',
         icon: 'pi pi-exclamation-triangle',
