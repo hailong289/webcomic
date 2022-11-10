@@ -8,19 +8,11 @@ const routes: Routes = [
     {
       path:'',
       component: HomeComponent,
-      canActivate: [AuthGuardService], 
+      canActivate: [AuthGuardService],
       children: [
         {
           path: '',
           loadChildren: () => import('./dasboard/dasboard.module').then(m => m.DasboardModule)
-        },
-        {
-          path: 'category',
-          loadChildren: () => import('./category/category.module').then(m => m.CategoryModule)
-        },
-        {
-          path: 'chapters',
-          loadChildren: () => import('./chapter/chapter.module').then(m => m.ChapterModule)
         }
       ]
     }

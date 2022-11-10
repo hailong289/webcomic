@@ -11,22 +11,22 @@ import { environment } from 'src/environments/environment.prod';
 })
 
 export class APIADMIN {
-    private readonly path = environment.apiAdminURL;
+    private readonly path = environment.bashUrl;
 
     constructor(private http: HttpClient, private spinner: NgxSpinnerService){
 
     }
-  
+
     get(url: string,params = {}): Observable<response[]>{
         // this.spinner.show();
-        return this.http.get<response[]>(this.path + url, {params: params}).pipe(
+        return this.http.get<any>(this.path + url, {params: params}).pipe(
             catchError(this.errorHandler),
             tap(res => this.spinner.hide())
         );
     }
     post(url: string, params = {}){
         this.spinner.show();
-        return this.http.post<response[]>(this.path + url, params).pipe(
+        return this.http.post(this.path + url, params).pipe(
             catchError(this.errorHandler),
             tap(res => this.spinner.hide())
         );
