@@ -18,6 +18,7 @@ export class HomeComponent {
     with = '240px';
    ngOnInit(): void {
         document.documentElement.style.setProperty("--sideBar", this.with);
+        
    }
    toggleMenu(data: boolean){
     //    if(data){
@@ -27,7 +28,6 @@ export class HomeComponent {
     //    }
     //    this.ngOnInit();
         this.tg_menu = data;
-        console.log(this.tg_menu);
-
+        // console.log(this.tg_menu);
     }
 }

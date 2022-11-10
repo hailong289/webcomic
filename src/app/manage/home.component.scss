@@ -39,3 +39,8 @@
     width: calc(100% - 280px);
     display: none;
 }
+::ng-deep{
+    .p-sidebar .p-sidebar-header + .p-sidebar-content{
+        padding: 0;
+    }
+}

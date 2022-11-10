@@ -1,8 +1,15 @@
 <div class="container">
     <div class="layout-main">
-        <div class="layout-main_sidebar">
-            <app-sidebar-admin [tg_menu]="tg_menu"></app-sidebar-admin>
-        </div>
+        <ng-container *ngIf="isDesktopDevice; else mobile">
+            <div class="layout-main_sidebar">
+                <app-sidebar-admin></app-sidebar-admin>
+            </div>
+        </ng-container>
+        <ng-template #mobile>
+            <p-sidebar [(visible)]="tg_menu">
+                <app-sidebar-admin></app-sidebar-admin>
+            </p-sidebar>
+        </ng-template>
         <perfect-scrollbar class="layout-main_content">
             <app-breadcrumb (toggleMenu)="toggleMenu($event)" [tg_menu]="tg_menu"></app-breadcrumb>
             <router-outlet></router-outlet>

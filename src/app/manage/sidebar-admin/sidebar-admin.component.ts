@@ -14,7 +14,6 @@ export class SidebarAdminComponent implements OnInit {
   showP: boolean = false;
   activeState: any = [true];
   isMobile = Utils.detectMob();
-  @Input() tg_menu = false;
 
   ngOnInit(): void {
     this.items = [
@@ -132,14 +131,6 @@ export class SidebarAdminComponent implements OnInit {
       }
     ];
 
-  }
-  ngOnChanges(changes: SimpleChanges): void {
-    //Called before any other lifecycle hook. Use it to inject dependencies, but avoid any serious work here.
-    //Add '${implements OnChanges}' to the class.
-    console.log(this.tg_menu);
-  }
-  show() {
-    this.tg_menu = true;
   }
   logout(){
      localStorage.clear();
