@@ -4,10 +4,10 @@ import { NotFoundComponent } from './comic/error/not-found/not-found.component';
 
 
 const routes: Routes = [
-  {
-    path: '',
-    loadChildren: () => import('./comic/comic.module').then(m => m .ComicModule)
-  },
+//   {
+//     path: '',
+//     loadChildren: () => import('./comic/comic.module').then(m => m .ComicModule)
+//   },
   {
     path: 'admin',
     children: [

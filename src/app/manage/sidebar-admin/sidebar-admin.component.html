@@ -1,37 +1,24 @@
-<p-sidebar [(visible)]="display">
+<p-sidebar [(visible)]="tg_menu">
     Content
 </p-sidebar>
-<p-button type="text" (click)="show()" icon="pi pi-plus" class="menu_sub"></p-button>
-<div class="card menu-left">
-    <div class="card-container yellow-container">
-        <perfect-scrollbar>
-            <div class="relative bg-bluegray-800">
-                <div class="px-4 py-3 w-full font-bold text-white text-5xl text-center">
-<!--                    COMICAPP-->
-                </div>
-                <div class="absolute surface-overlay mt-2 line-height-3 menu_content bg-bluegray-800">
-
-                    <nav class="menu">
-                        <ul class="parent_menu">
-                            <ng-container *ngFor="let menu of items;let i = index">
-                                <ng-container *ngIf="!menu.children">
-                                    <li [routerLink]="['{{ menu.routerLink }}']" routerLinkActive="is-active" class="cursor-pointer"><span class="{{ menu.icon }}"></span>{{ menu.label }}</li>
-                                </ng-container>
-                                <ng-container *ngIf="menu.children" >
-                                    <p-accordion expandIcon="{{ menu.icon }}" [(selected)]="activeState[i]">
-                                        <p-accordionTab header="{{ menu.label }}">
-                                            <div class="sub_menu" *ngFor="let submenu of menu.children">
-                                                <li class="nav_link cursor-pointer" [routerLink]="['{{ submenu.routerLink }}']" routerLinkActive="is-active"><span class="{{ menu.icon }}"></span>{{ submenu.label }}</li>
-                                            </div>
-                                        </p-accordionTab>
-                                    </p-accordion>
-                                </ng-container>
-                            </ng-container>
-                        </ul>
-                    </nav>
-                </div>
-
-            </div>
-        </perfect-scrollbar>
-    </div>
+<div class="layout-sidebar shadow-4" *ngIf="!isMobile">
+    <a class="app-logo">
+        <img src="../../../assets/logo.png" alt="" class="logo">
+    </a>
+    <ul class="layout-menu p-0 m-0">
+        <li class="item" *ngFor="let menu of items; let i = index">
+            <a class="item_content {{ i == 1 ? 'active':'' }}" (click)="handleSubMenu(menu.idsub, i)">
+                <i class="{{ menu.icon }} icon_custom"></i>
+                <span class="label_menu">{{ menu.label }}</span>
+            </a>
+            <ul *ngIf="menu.children" class="layout-menu-child p-0 m-0" id="{{ menu.idsub }}">
+                <li class="item-child" *ngFor="let menu_sub of menu.children">
+                    <a class="item_content">
+                        <i class="{{ menu.icon }} icon_custom"></i>
+                        <span class="label_menu">{{ menu_sub.label }}</span>
+                    </a>
+                </li>
+            </ul>
+        </li>
+    </ul>
 </div>

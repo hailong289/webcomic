@@ -19,14 +19,14 @@ export class APIADMIN {
 
     get(url: string,params = {}): Observable<response[]>{
         // this.spinner.show();
-        return this.http.get<response[]>(this.path + url, {params: params}).pipe(
+        return this.http.get<any>(this.path + url, {params: params}).pipe(
             catchError(this.errorHandler),
             tap(res => this.spinner.hide())
         );
     }
     post(url: string, params = {}){
         this.spinner.show();
-        return this.http.post<response[]>(this.path + url, params).pipe(
+        return this.http.post(this.path + url, params).pipe(
             catchError(this.errorHandler),
             tap(res => this.spinner.hide())
         );

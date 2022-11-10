@@ -9,19 +9,22 @@
         display: flex;
         justify-content: flex-end;
         &_sidebar{
-            width: 280px;
+            width: 240px;
+            width: var(--sideBar);
             height: 100%;
             position: fixed;
             top: 0;
             left: 0;
             z-index: 100;
             @include max(780){
-                display: none;
+                z-index: -1;
             }
         }
         &_content{
-            width: calc(100% - 280px);
+            width: calc(100% - 240px);
+            width: calc(100% - var(--sideBar));
             min-height: 100vh;
+            background-color: var(--surface-ground);
             @include max(780) {
                 width: 100%;
                 margin: 0px;
